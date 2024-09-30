@@ -14,4 +14,4 @@ This repository contains the configuration files and scripts to deploy a Redis s
 
 ## Prerequisites
 
-Before usi
+Before using this reposito
