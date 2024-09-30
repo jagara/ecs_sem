@@ -1,4 +1,4 @@
-# Local .terraform directories
+# ecs_semterraform directories
 **/.terraform/*
 
 # .tfstate files

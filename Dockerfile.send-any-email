@@ -1,0 +1,33 @@
+# Dockerfile for send-any-email application
+
+FROM node:20-alpine
+
+# Create app directory
+WORKDIR /usr/src/app
+# Add packages
+RUN apk add git
+RUN apk add curl
+
+# clone app repo
+RUN git clone https://github.com/Jayanth-MKV/send-any-email .
+
+# Install app dependencies
+RUN npm install
+
+RUN npm run build
+# Expose the port the app runs on
+EXPOSE 3000
+
+# Set environment variables
+ENV EMAIL_HOST=""
+ENV EMAIL_PORT=""
+ENV EMAIL_USER=""
+ENV EMAIL_PASS=""
+ENV EMAIL_FROM=""
+ENV REDIS_PORT=""
+ENV REDIS_HOST=""
+ENV REDIS_PASS=""
+ENV REDIS_USER=""
+
+# Command to run the app
+CMD ["npm", "start:dev"]
